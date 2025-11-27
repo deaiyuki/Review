@@ -1,138 +1,66 @@
 {
-    "$metadata": {
-        "uris": {
-            "jsonLdContext": "https://example.com/path/to/file/context.jsonld"
-        },
-        "version": "1.0",
-        "type": "object"
+  "$metadata": {
+    "uris": {
+      "jsonLdContext": "https://example.com/context/up-ownership-proof.jsonld"
     },
-    "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "description": "Proof that a Privado ID controls or is linked to a Universal Profile (UP) DID.",
-    "title": "UP Ownership Proof",
-    "properties": {
-        "credentialSubject": {
-            "description": "Stores the data of the credential",
-            "title": "Credential subject",
-            "properties": {
-                "id": {
-                    "description": "Stores the DID of the subject that owns the credential",
-                    "title": "Credential subject ID",
-                    "format": "uri",
-                    "type": "string"
-                },
-                "upDid": {
-                    "description": "The Universal Profile DID linked to this Privado ID.",
-                    "title": "Universal Profile DID",
-                    "type": "string"
-                },
-                "upAddress": {
-                    "description": "UP Address",
-                    "title": "UP Address",
-                    "type": "string"
-                },
-                "verifiedAt": {
-                    "description": "Verification Timestamp",
-                    "title": "Verification Timestamp",
-                    "type": "string"
-                }
-            },
-            "required": [
-                "upDid",
-                "upAddress",
-                "verifiedAt"
-            ],
-            "type": "object"
-        },
-        "@context": {
-            "type": [
-                "string",
-                "array",
-                "object"
-            ]
-        },
-        "expirationDate": {
-            "format": "date-time",
-            "type": "string"
-        },
+    "version": "1.0",
+    "type": "UPOwnershipProof"
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "UP Ownership Proof",
+  "description": "Proof that a Privado ID controls or is linked to a Universal Profile (UP).",
+  "type": "object",
+  "properties": {
+    "credentialSubject": {
+      "title": "Credential subject",
+      "description": "Data contained in the credential",
+      "type": "object",
+      "properties": {
         "id": {
-            "type": "string"
+          "title": "Holder DID",
+          "description": "Privado (wallet) DID that owns this credential",
+          "type": "string",
+          "format": "uri"
         },
-        "issuanceDate": {
-            "format": "date-time",
-            "type": "string"
+        "upDid": {
+          "title": "UP DID",
+          "description": "DID (or DID-like identifier) of the Universal Profile",
+          "type": "string"
         },
-        "issuer": {
-            "type": [
-                "string",
-                "object"
-            ],
-            "format": "uri",
-            "properties": {
-                "id": {
-                    "format": "uri",
-                    "type": "string"
-                }
-            },
-            "required": [
-                "id"
-            ]
+        "upAddress": {
+          "title": "UP Address",
+          "description": "Universal Profile EOA address",
+          "type": "string",
+          "pattern": "^0x[a-fA-F0-9]{40}$"
         },
-        "type": {
-            "type": [
-                "string",
-                "array"
-            ],
-            "items": {
-                "type": "string"
-            }
+        "message": {
+          "title": "Signed message",
+          "description": "Message that UP signed to prove control",
+          "type": "string"
         },
-        "credentialSchema": {
-            "properties": {
-                "id": {
-                    "format": "uri",
-                    "type": "string"
-                },
-                "type": {
-                    "type": "string"
-                }
-            },
-            "required": [
-                "id",
-                "type"
-            ],
-            "type": "object"
+        "upSignature": {
+          "title": "UP signature",
+          "description": "Signature produced by the UP smart contract (LSP0 isValidSignature)",
+          "type": "string"
         },
-        "credentialStatus": {
-            "description": "Allows the discovery of information about the current status of the credential, such as whether it is suspended or revoked.",
-            "title": "Credential Status",
-            "properties": {
-                "id": {
-                    "description": "Id URL of the credentialStatus.",
-                    "title": "Id",
-                    "format": "uri",
-                    "type": "string"
-                },
-                "type": {
-                    "description": "Expresses the credential status type (method). The value should provide enough information to determine the current status of the credential.",
-                    "title": "Type",
-                    "type": "string"
-                }
-            },
-            "required": [
-                "id",
-                "type"
-            ],
-            "type": "object"
+        "linkedAt": {
+          "title": "Link timestamp",
+          "description": "When this UP↔Privado link was established",
+          "type": "string",
+          "format": "date-time"
         }
-    },
-    "required": [
-        "credentialSubject",
-        "@context",
+      },
+      "required": [
         "id",
-        "issuanceDate",
-        "issuer",
-        "type",
-        "credentialSchema"
-    ],
-    "type": "object"
+        "upDid",
+        "upAddress",
+        "message",
+        "upSignature"
+      ]
+    }
+  },
+  "required": [
+    "credentialSubject"
+  ],
+  "additionalProperties": false
 }
