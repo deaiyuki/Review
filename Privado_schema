@@ -7,7 +7,7 @@
     "type": "UPOwnershipProof"
   },
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "UP Ownership Proof",
+  "title": "UPOwnershipProof",
   "description": "Proof that a Privado ID controls or is linked to a Universal Profile (UP).",
   "type": "object",
   "properties": {
