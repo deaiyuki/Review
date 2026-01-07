@@ -1,7 +1,7 @@
 {
   "$metadata": {
     "uris": {
-      "jsonLdContext": "https://raw.githubusercontent.com/deaiyuki/Review/main/context/up-ownership-proof.jsonld"
+      "jsonLdContext": "https://raw.githubusercontent.com/deaiyuki/Review/refs/heads/main/up-ownership-proof.jsonld"
     },
     "version": "1.0",
     "type": "UPOwnershipProof"
