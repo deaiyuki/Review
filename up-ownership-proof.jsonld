@@ -1,24 +1,19 @@
 {
-  "@context": {
-    "@version": 1.1,
+  "@context": [
+    "https://www.w3.org/2018/credentials/v1",
+    {
+      "@version": 1.1,
 
-    "UPOwnershipProof": "https://example.org/credentials#UPOwnershipProof",
+      "UPOwnershipProof": "https://example.org/credentials#UPOwnershipProof",
 
-    "credentialSubject": {
-      "@id": "https://www.w3.org/2018/credentials#credentialSubject",
-      "@context": {
-        "id": "@id",
-
-        "upDid": "https://example.org/vocab#upDid",
-        "upAddress": "https://example.org/vocab#upAddress",
-        "message": "https://example.org/vocab#message",
-        "upSignature": "https://example.org/vocab#upSignature",
-        "linkedAt": {
-          "@id": "https://example.org/vocab#linkedAt",
-          "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
-        }
+      "upDid": "https://example.org/vocab#upDid",
+      "upAddress": "https://example.org/vocab#upAddress",
+      "message": "https://example.org/vocab#message",
+      "upSignature": "https://example.org/vocab#upSignature",
+      "linkedAt": {
+        "@id": "https://example.org/vocab#linkedAt",
+        "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
       }
     }
-  }
+  ]
 }
-
