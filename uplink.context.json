@@ -5,14 +5,17 @@
       "@protected": true,
       "id": "@id",
       "type": "@type",
+      "xsd": "http://www.w3.org/2001/XMLSchema#",
+
       "UPLinkCredential": {
-        "@id": "https://raw.githubusercontent.com/deaiyuki/Review/main/uplink.context.json#UPLinkCredential",
+        "@id": "https://example.com/credentials#UPLinkCredential",
         "@context": {
           "@version": 1.1,
           "@protected": true,
           "id": "@id",
           "type": "@type",
           "xsd": "http://www.w3.org/2001/XMLSchema#",
+
           "upAddress": {
             "@id": "https://example.com/vocab#upAddress",
             "@type": "xsd:string"
