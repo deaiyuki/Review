@@ -12,7 +12,10 @@
   "properties": {
     "type": {
       "oneOf": [
-        { "type": "string", "const": "UPLinkCredential" },
+        {
+          "type": "string",
+          "const": "UPLinkCredential"
+        },
         {
           "type": "array",
           "items": { "type": "string" },
@@ -24,22 +27,60 @@
       "type": "object",
       "required": ["id", "type"],
       "properties": {
-        "id": { "type": "string", "format": "uri" },
-        "type": { "type": "string" }
+        "id": {
+          "type": "string",
+          "format": "uri"
+        },
+        "type": {
+          "type": "string"
+        }
       },
       "additionalProperties": true
     },
     "credentialSubject": {
       "type": "object",
-      "required": ["id", "upAddress"],
+      "required": [
+        "id",
+        "upDid",
+        "upAddress",
+        "privadoProof",
+        "sessionId",
+        "message",
+        "signature"
+      ],
       "properties": {
-        "id": { "type": "string", "format": "uri" },
-        "upAddress": { "type": "string" }
+        "id": {
+          "type": "string",
+          "format": "uri"
+        },
+        "upDid": {
+          "type": "string",
+          "format": "uri"
+        },
+        "upAddress": {
+          "type": "string"
+        },
+        "privadoProof": {
+          "type": ["object", "string", "array"]
+        },
+        "sessionId": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "signature": {
+          "type": "string"
+        }
       },
       "additionalProperties": true
     },
-    "proof": { "type": "object" },
-    "proofs": { "type": "array" }
+    "proof": {
+      "type": "object"
+    },
+    "proofs": {
+      "type": "array"
+    }
   },
   "additionalProperties": true
 }
