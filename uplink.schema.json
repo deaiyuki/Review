@@ -4,7 +4,7 @@
   "type": "object",
   "$metadata": {
     "uris": {
-      "jsonLdContext": "https://raw.githubusercontent.com/deaiyuki/Review/main/uplink.jsonld",
+      "jsonLdContext": "https://raw.githubusercontent.com/deaiyuki/Review/main/uplink.json",
       "jsonSchema": "https://raw.githubusercontent.com/deaiyuki/Review/main/uplink.schema.json"
     }
   },
