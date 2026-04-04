@@ -8,81 +8,15 @@
       "jsonSchema": "https://raw.githubusercontent.com/deaiyuki/Review/main/uplink.schema.json"
     }
   },
-  "required": [
-    "@context",
-    "type",
-    "issuer",
-    "issuanceDate",
-    "expirationDate",
-    "credentialSchema",
-    "credentialSubject"
-  ],
+  "required": ["type", "credentialSubject"],
   "properties": {
-    "@context": {
-      "oneOf": [
-        {
-          "type": "string"
-        },
-        {
-          "type": "array",
-          "minItems": 1,
-          "items": {
-            "type": ["string", "object"]
-          }
-        }
-      ]
-    },
     "type": {
-      "oneOf": [
-        {
-          "type": "string",
-          "const": "UPLinkCredential"
-        },
-        {
-          "type": "array",
-          "items": {
-            "type": "string"
-          },
-          "allOf": [
-            {
-              "contains": {
-                "const": "VerifiableCredential"
-              }
-            },
-            {
-              "contains": {
-                "const": "UPLinkCredential"
-              }
-            }
-          ]
-        }
-      ]
-    },
-    "issuer": {
       "type": "string",
-      "pattern": "^did:"
-    },
-    "issuanceDate": {
-      "type": "string",
-      "format": "date-time"
-    },
-    "expirationDate": {
-      "type": "string",
-      "format": "date-time"
+      "const": "UPLinkCredential"
     },
     "credentialSchema": {
-      "type": "object",
-      "required": ["id", "type"],
-      "properties": {
-        "id": {
-          "type": "string",
-          "format": "uri"
-        },
-        "type": {
-          "type": "string"
-        }
-      },
-      "additionalProperties": true
+      "type": "string",
+      "format": "uri"
     },
     "credentialSubject": {
       "type": "object",
@@ -131,6 +65,16 @@
         }
       },
       "additionalProperties": true
+    },
+    "expiration": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "proofs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
     },
     "proof": {
       "type": "object"
