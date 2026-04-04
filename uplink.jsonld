@@ -1,0 +1,33 @@
+{
+  "@context": {
+    "@version": 1.1,
+
+    "UPLinkCredential": "https://raw.githubusercontent.com/deaiyuki/Review/main#UPLinkCredential",
+
+    "linkedPrivadoDid": {
+      "@id": "https://raw.githubusercontent.com/deaiyuki/Review/main#linkedPrivadoDid",
+      "@type": "@id"
+    },
+    "relationship": {
+      "@id": "https://raw.githubusercontent.com/deaiyuki/Review/main#relationship"
+    },
+    "linkageMethod": {
+      "@id": "https://raw.githubusercontent.com/deaiyuki/Review/main#linkageMethod"
+    },
+    "linkedAt": {
+      "@id": "https://raw.githubusercontent.com/deaiyuki/Review/main#linkedAt",
+      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "evidenceSummary": {
+      "@id": "https://raw.githubusercontent.com/deaiyuki/Review/main#evidenceSummary"
+    },
+    "upSignatureVerified": {
+      "@id": "https://raw.githubusercontent.com/deaiyuki/Review/main#upSignatureVerified",
+      "@type": "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "privadoAuthenticationVerified": {
+      "@id": "https://raw.githubusercontent.com/deaiyuki/Review/main#privadoAuthenticationVerified",
+      "@type": "http://www.w3.org/2001/XMLSchema#boolean"
+    }
+  }
+}
