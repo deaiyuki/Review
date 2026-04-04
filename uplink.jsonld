@@ -1,9 +1,7 @@
 {
   "@context": {
     "@version": 1.1,
-
     "UPLinkCredential": "https://raw.githubusercontent.com/deaiyuki/Review/main#UPLinkCredential",
-
     "linkedPrivadoDid": {
       "@id": "https://raw.githubusercontent.com/deaiyuki/Review/main#linkedPrivadoDid",
       "@type": "@id"
