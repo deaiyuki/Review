@@ -9,16 +9,28 @@
     }
   },
   "required": [
-    "credentialSchema",
+    "@context",
     "type",
-    "credentialSubject",
-    "expiration",
-    "proofs"
+    "issuer",
+    "issuanceDate",
+    "expirationDate",
+    "credentialSchema",
+    "credentialSubject"
   ],
   "properties": {
-    "credentialSchema": {
-      "type": "string",
-      "format": "uri"
+    "@context": {
+      "oneOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": ["string", "object"]
+          }
+        }
+      ]
     },
     "type": {
       "oneOf": [
@@ -31,11 +43,46 @@
           "items": {
             "type": "string"
           },
-          "contains": {
-            "const": "UPLinkCredential"
-          }
+          "allOf": [
+            {
+              "contains": {
+                "const": "VerifiableCredential"
+              }
+            },
+            {
+              "contains": {
+                "const": "UPLinkCredential"
+              }
+            }
+          ]
         }
       ]
+    },
+    "issuer": {
+      "type": "string",
+      "pattern": "^did:"
+    },
+    "issuanceDate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "expirationDate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "credentialSchema": {
+      "type": "object",
+      "required": ["id", "type"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "uri"
+        },
+        "type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
     },
     "credentialSubject": {
       "type": "object",
@@ -85,19 +132,8 @@
       },
       "additionalProperties": true
     },
-    "expiration": {
-      "type": "integer",
-      "minimum": 0
-    },
     "proof": {
       "type": "object"
-    },
-    "proofs": {
-      "type": "array",
-      "minItems": 1,
-      "items": {
-        "type": "string"
-      }
     }
   },
   "additionalProperties": true
