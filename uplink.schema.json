@@ -1,13 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "UPLinkCredentialSubject",
+  "title": "UPLinkCredential",
   "type": "object",
-  "$metadata": {
-    "uris": {
-      "jsonLdContext": "https://raw.githubusercontent.com/deaiyuki/Review/main/uplink.jsonld",
-      "jsonSchema": "https://raw.githubusercontent.com/deaiyuki/Review/main/uplink.schema.json"
-    }
-  },
   "required": [
     "id",
     "linkedUpDid",
@@ -18,30 +12,12 @@
     "privadoAuthenticationVerified"
   ],
   "properties": {
-    "id": {
-      "type": "string",
-      "pattern": "^did:"
-    },
-    "linkedUpDid": {
-      "type": "string",
-      "pattern": "^did:"
-    },
-    "relationship": {
-      "type": "string"
-    },
-    "linkageMethod": {
-      "type": "string"
-    },
-    "linkedAt": {
-      "type": "string",
-      "format": "date-time"
-    },
-    "upSignatureVerified": {
-      "type": "boolean"
-    },
-    "privadoAuthenticationVerified": {
-      "type": "boolean"
-    }
-  },
-  "additionalProperties": true
+    "id": { "type": "string" },
+    "linkedUpDid": { "type": "string" },
+    "relationship": { "type": "string" },
+    "linkageMethod": { "type": "string" },
+    "linkedAt": { "type": "string" },
+    "upSignatureVerified": { "type": "boolean" },
+    "privadoAuthenticationVerified": { "type": "boolean" }
+  }
 }
