@@ -1,30 +1,34 @@
 {
   "@context": {
     "@version": 1.1,
-    "UPLinkCredential": "https://raw.githubusercontent.com/deaiyuki/Review/main#UPLinkCredential",
+    "id": "@id",
+    "type": "@type",
+
+    "UPLinkCredential": "https://raw.githubusercontent.com/deaiyuki/Review/main/uplink.jsonld#UPLinkCredential",
+
     "linkedPrivadoDid": {
-      "@id": "https://raw.githubusercontent.com/deaiyuki/Review/main#linkedPrivadoDid",
+      "@id": "https://raw.githubusercontent.com/deaiyuki/Review/main/uplink.jsonld#linkedPrivadoDid",
       "@type": "@id"
     },
     "relationship": {
-      "@id": "https://raw.githubusercontent.com/deaiyuki/Review/main#relationship"
+      "@id": "https://raw.githubusercontent.com/deaiyuki/Review/main/uplink.jsonld#relationship"
     },
     "linkageMethod": {
-      "@id": "https://raw.githubusercontent.com/deaiyuki/Review/main#linkageMethod"
+      "@id": "https://raw.githubusercontent.com/deaiyuki/Review/main/uplink.jsonld#linkageMethod"
     },
     "linkedAt": {
-      "@id": "https://raw.githubusercontent.com/deaiyuki/Review/main#linkedAt",
+      "@id": "https://raw.githubusercontent.com/deaiyuki/Review/main/uplink.jsonld#linkedAt",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "evidenceSummary": {
-      "@id": "https://raw.githubusercontent.com/deaiyuki/Review/main#evidenceSummary"
+      "@id": "https://raw.githubusercontent.com/deaiyuki/Review/main/uplink.jsonld#evidenceSummary"
     },
     "upSignatureVerified": {
-      "@id": "https://raw.githubusercontent.com/deaiyuki/Review/main#upSignatureVerified",
+      "@id": "https://raw.githubusercontent.com/deaiyuki/Review/main/uplink.jsonld#upSignatureVerified",
       "@type": "http://www.w3.org/2001/XMLSchema#boolean"
     },
     "privadoAuthenticationVerified": {
-      "@id": "https://raw.githubusercontent.com/deaiyuki/Review/main#privadoAuthenticationVerified",
+      "@id": "https://raw.githubusercontent.com/deaiyuki/Review/main/uplink.jsonld#privadoAuthenticationVerified",
       "@type": "http://www.w3.org/2001/XMLSchema#boolean"
     }
   }
