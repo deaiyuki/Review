@@ -1,23 +1,95 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "UPLinkCredential",
   "type": "object",
+  "$metadata": {
+    "uris": {
+      "jsonLdContext": "https://raw.githubusercontent.com/deaiyuki/Review/main/uplink.jsonld",
+      "jsonSchema": "https://raw.githubusercontent.com/deaiyuki/Review/main/uplink.schema.json"
+    }
+  },
   "required": [
+    "@context",
     "id",
-    "linkedUpDid",
-    "relationship",
-    "linkageMethod",
-    "linkedAt",
-    "upSignatureVerified",
-    "privadoAuthenticationVerified"
+    "type",
+    "issuanceDate",
+    "credentialSubject",
+    "credentialSchema",
+    "issuer"
   ],
   "properties": {
-    "id": { "type": "string" },
-    "linkedUpDid": { "type": "string" },
-    "relationship": { "type": "string" },
-    "linkageMethod": { "type": "string" },
-    "linkedAt": { "type": "string" },
-    "upSignatureVerified": { "type": "boolean" },
-    "privadoAuthenticationVerified": { "type": "boolean" }
+    "@context": {
+      "type": ["string", "array", "object"]
+    },
+    "id": {
+      "type": "string"
+    },
+    "type": {
+      "type": ["string", "array"],
+      "items": {
+        "type": "string"
+      }
+    },
+    "issuer": {
+      "type": ["string", "object"]
+    },
+    "issuanceDate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "expirationDate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "credentialSchema": {
+      "type": "object",
+      "required": ["id", "type"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "uri"
+        },
+        "type": {
+          "type": "string"
+        }
+      }
+    },
+    "credentialSubject": {
+      "type": "object",
+      "required": [
+        "id",
+        "linkedUpDid",
+        "relationship",
+        "linkageMethod",
+        "linkedAt",
+        "upSignatureVerified",
+        "privadoAuthenticationVerified"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "uri"
+        },
+        "linkedUpDid": {
+          "type": "string",
+          "format": "uri"
+        },
+        "relationship": {
+          "type": "string"
+        },
+        "linkageMethod": {
+          "type": "string"
+        },
+        "linkedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "upSignatureVerified": {
+          "type": "boolean"
+        },
+        "privadoAuthenticationVerified": {
+          "type": "boolean"
+        }
+      }
+    }
   }
 }
