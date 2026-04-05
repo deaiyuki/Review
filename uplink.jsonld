@@ -5,7 +5,6 @@
     "type": "@type",
 
     "UPLinkCredential": "https://raw.githubusercontent.com/deaiyuki/Review/main/uplink.jsonld#UPLinkCredential",
-
     "linkedPrivadoDid": {
       "@id": "https://raw.githubusercontent.com/deaiyuki/Review/main/uplink.jsonld#linkedPrivadoDid",
       "@type": "@id"
