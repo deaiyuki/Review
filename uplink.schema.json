@@ -30,54 +30,40 @@
       "additionalProperties": true
     },
     "credentialSubject": {
-      "type": "object",
-      "required": [
-        "id",
-        "linkedPrivadoDid",
-        "relationship",
-        "linkageMethod",
-        "linkedAt",
-        "upSignatureVerified",
-        "privadoAuthenticationVerified"
-      ],
-      "properties": {
-        "id": {
-          "type": "string",
-          "pattern": "^did:"
-        },
-        "linkedPrivadoDid": {
-          "type": "string",
-          "pattern": "^did:"
-        },
-        "relationship": {
-          "type": "string"
-        },
-        "linkageMethod": {
-          "type": "string"
-        },
-        "linkedAt": {
-          "type": "string",
-          "format": "date-time"
-        },
-        "upSignatureVerified": {
-          "type": "boolean"
-        },
-        "privadoAuthenticationVerified": {
-          "type": "boolean"
-        }
-      },
-      "additionalProperties": true
+  "type": "object",
+  "required": [
+    "id",
+    "linkedUpDid",
+    "relationship",
+    "linkageMethod",
+    "linkedAt",
+    "upSignatureVerified",
+    "privadoAuthenticationVerified"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^did:"
     },
-    "expiration": {
-      "type": "integer",
-      "minimum": 0
+    "linkedUpDid": {
+      "type": "string",
+      "pattern": "^did:"
     },
-    "proof": {
-      "type": "object"
+    "relationship": {
+      "type": "string"
     },
-    "proofs": {
-      "type": "array",
-      "items": { "type": "string" }
+    "linkageMethod": {
+      "type": "string"
+    },
+    "linkedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "upSignatureVerified": {
+      "type": "boolean"
+    },
+    "privadoAuthenticationVerified": {
+      "type": "boolean"
     }
   },
   "additionalProperties": true
