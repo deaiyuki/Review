@@ -1,34 +1,43 @@
 {
-  "@context": {
-    "@version": 1.1,
-    "id": "@id",
-    "type": "@type",
-
-    "UPLinkCredential": "https://raw.githubusercontent.com/deaiyuki/Review/main/uplink.jsonld#UPLinkCredential",
-    "linkedPrivadoDid": {
-      "@id": "https://raw.githubusercontent.com/deaiyuki/Review/main/uplink.jsonld#linkedPrivadoDid",
-      "@type": "@id"
-    },
-    "relationship": {
-      "@id": "https://raw.githubusercontent.com/deaiyuki/Review/main/uplink.jsonld#relationship"
-    },
-    "linkageMethod": {
-      "@id": "https://raw.githubusercontent.com/deaiyuki/Review/main/uplink.jsonld#linkageMethod"
-    },
-    "linkedAt": {
-      "@id": "https://raw.githubusercontent.com/deaiyuki/Review/main/uplink.jsonld#linkedAt",
-      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
-    },
-    "evidenceSummary": {
-      "@id": "https://raw.githubusercontent.com/deaiyuki/Review/main/uplink.jsonld#evidenceSummary"
-    },
-    "upSignatureVerified": {
-      "@id": "https://raw.githubusercontent.com/deaiyuki/Review/main/uplink.jsonld#upSignatureVerified",
-      "@type": "http://www.w3.org/2001/XMLSchema#boolean"
-    },
-    "privadoAuthenticationVerified": {
-      "@id": "https://raw.githubusercontent.com/deaiyuki/Review/main/uplink.jsonld#privadoAuthenticationVerified",
-      "@type": "http://www.w3.org/2001/XMLSchema#boolean"
+  "@context": [
+    {
+      "@version": 1.1,
+      "@protected": true,
+      "id": "@id",
+      "type": "@type",
+      "UPLinkCredential": {
+        "@id": "https://raw.githubusercontent.com/deaiyuki/Review/main/uplink.jsonld#UPLinkCredential",
+        "@context": {
+          "@version": 1.1,
+          "@protected": true,
+          "id": "@id",
+          "type": "@type",
+          "vocab": "https://raw.githubusercontent.com/deaiyuki/Review/main/uplink-vocab#",
+          "xsd": "http://www.w3.org/2001/XMLSchema#",
+          "linkedPrivadoDid": {
+            "@id": "vocab:linkedPrivadoDid",
+            "@type": "@id"
+          },
+          "relationship": {
+            "@id": "vocab:relationship"
+          },
+          "linkageMethod": {
+            "@id": "vocab:linkageMethod"
+          },
+          "linkedAt": {
+            "@id": "vocab:linkedAt",
+            "@type": "xsd:dateTime"
+          },
+          "upSignatureVerified": {
+            "@id": "vocab:upSignatureVerified",
+            "@type": "xsd:boolean"
+          },
+          "privadoAuthenticationVerified": {
+            "@id": "vocab:privadoAuthenticationVerified",
+            "@type": "xsd:boolean"
+          }
+        }
+      }
     }
-  }
+  ]
 }
