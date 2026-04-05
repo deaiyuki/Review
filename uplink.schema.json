@@ -12,58 +12,76 @@
   "properties": {
     "type": {
       "oneOf": [
-        { "type": "string", "const": "UPLinkCredential" },
+        {
+          "type": "string",
+          "const": "UPLinkCredential"
+        },
         {
           "type": "array",
-          "items": { "type": "string" },
-          "contains": { "const": "UPLinkCredential" }
+          "items": {
+            "type": "string"
+          },
+          "contains": {
+            "const": "UPLinkCredential"
+          }
         }
       ]
     },
     "credentialSchema": {
+      "type": "string",
+      "format": "uri"
+    },
+    "credentialSubject": {
       "type": "object",
-      "required": ["id", "type"],
+      "required": [
+        "id",
+        "linkedUpDid",
+        "relationship",
+        "linkageMethod",
+        "linkedAt",
+        "upSignatureVerified",
+        "privadoAuthenticationVerified"
+      ],
       "properties": {
-        "id": { "type": "string", "format": "uri" },
-        "type": { "type": "string" }
+        "id": {
+          "type": "string",
+          "pattern": "^did:"
+        },
+        "linkedUpDid": {
+          "type": "string",
+          "pattern": "^did:"
+        },
+        "relationship": {
+          "type": "string"
+        },
+        "linkageMethod": {
+          "type": "string"
+        },
+        "linkedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "upSignatureVerified": {
+          "type": "boolean"
+        },
+        "privadoAuthenticationVerified": {
+          "type": "boolean"
+        }
       },
       "additionalProperties": true
     },
-    "credentialSubject": {
-  "type": "object",
-  "required": [
-    "id",
-    "linkedUpDid",
-    "relationship",
-    "linkageMethod",
-    "linkedAt",
-    "upSignatureVerified",
-    "privadoAuthenticationVerified"
-  ],
-  "properties": {
-    "id": {
-      "type": "string",
-      "pattern": "^did:"
+    "expiration": {
+      "type": "integer",
+      "minimum": 0
     },
-    "linkedUpDid": {
-      "type": "string",
-      "pattern": "^did:"
+    "proof": {
+      "type": "object"
     },
-    "relationship": {
-      "type": "string"
-    },
-    "linkageMethod": {
-      "type": "string"
-    },
-    "linkedAt": {
-      "type": "string",
-      "format": "date-time"
-    },
-    "upSignatureVerified": {
-      "type": "boolean"
-    },
-    "privadoAuthenticationVerified": {
-      "type": "boolean"
+    "proofs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
     }
   },
   "additionalProperties": true
