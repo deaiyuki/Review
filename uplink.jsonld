@@ -28,6 +28,9 @@
             "@id": "vocab:linkedAt",
             "@type": "xsd:dateTime"
           },
+          "evidenceSummary": {
+            "@id": "vocab:evidenceSummary"
+          },
           "upSignatureVerified": {
             "@id": "vocab:upSignatureVerified",
             "@type": "xsd:boolean"
