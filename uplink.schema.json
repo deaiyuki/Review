@@ -12,18 +12,11 @@
   "properties": {
     "type": {
       "oneOf": [
-        {
-          "type": "string",
-          "const": "UPLinkCredential"
-        },
+        { "type": "string", "const": "UPLinkCredential" },
         {
           "type": "array",
-          "items": {
-            "type": "string"
-          },
-          "contains": {
-            "const": "UPLinkCredential"
-          }
+          "items": { "type": "string" },
+          "contains": { "const": "UPLinkCredential" }
         }
       ]
     },
@@ -73,15 +66,6 @@
     "expiration": {
       "type": "integer",
       "minimum": 0
-    },
-    "proof": {
-      "type": "object"
-    },
-    "proofs": {
-      "type": "array",
-      "items": {
-        "type": "string"
-      }
     }
   },
   "additionalProperties": true
