@@ -20,7 +20,6 @@
         }
       ]
     },
-
     "credentialSchema": {
       "type": "object",
       "required": ["id", "type"],
@@ -30,7 +29,6 @@
       },
       "additionalProperties": true
     },
-
     "credentialSubject": {
       "type": "object",
       "required": [
@@ -61,31 +59,19 @@
           "type": "string",
           "format": "date-time"
         },
-        "evidenceSummary": {
-          "type": "object",
-          "required": [
-            "upSignatureVerified",
-            "privadoAuthenticationVerified"
-          ],
-          "properties": {
-            "upSignatureVerified": {
-              "type": "boolean"
-            },
-            "privadoAuthenticationVerified": {
-              "type": "boolean"
-            }
-          },
-          "additionalProperties": false
+        "upSignatureVerified": {
+          "type": "boolean"
+        },
+        "privadoAuthenticationVerified": {
+          "type": "boolean"
         }
       },
       "additionalProperties": true
     },
-
     "expiration": {
       "type": "integer",
       "minimum": 0
     },
-
     "proof": {
       "type": "object"
     },
