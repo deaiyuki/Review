@@ -11,13 +11,26 @@
   "required": ["type", "credentialSubject"],
   "properties": {
     "type": {
-      "type": "string",
-      "const": "UPLinkCredential"
+      "oneOf": [
+        { "type": "string", "const": "UPLinkCredential" },
+        {
+          "type": "array",
+          "items": { "type": "string" },
+          "contains": { "const": "UPLinkCredential" }
+        }
+      ]
     },
+
     "credentialSchema": {
-      "type": "string",
-      "format": "uri"
+      "type": "object",
+      "required": ["id", "type"],
+      "properties": {
+        "id": { "type": "string", "format": "uri" },
+        "type": { "type": "string" }
+      },
+      "additionalProperties": true
     },
+
     "credentialSubject": {
       "type": "object",
       "required": [
@@ -66,18 +79,18 @@
       },
       "additionalProperties": true
     },
+
     "expiration": {
       "type": "integer",
       "minimum": 0
     },
-    "proofs": {
-      "type": "array",
-      "items": {
-        "type": "string"
-      }
-    },
+
     "proof": {
       "type": "object"
+    },
+    "proofs": {
+      "type": "array",
+      "items": { "type": "string" }
     }
   },
   "additionalProperties": true
