@@ -12,7 +12,6 @@
           "@protected": true,
           "id": "@id",
           "type": "@type",
-          "vocab": "https://raw.githubusercontent.com/deaiyuki/Review/main/uplink-vocab#",
           "xsd": "http://www.w3.org/2001/XMLSchema#",
           "linkedUpDid": {
             "@id": "vocab:linkedUpDid",
