@@ -39,7 +39,8 @@
         "relationship",
         "linkageMethod",
         "linkedAt",
-        "evidenceSummary"
+        "upSignatureVerified",
+        "privadoAuthenticationVerified"
       ],
       "properties": {
         "id": {
