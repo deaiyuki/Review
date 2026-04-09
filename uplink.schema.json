@@ -2,7 +2,7 @@
   "$metadata": {
     "type": "object",
     "uris": {
-      "jsonLdContext": "https://raw.githubusercontent.com/deaiyuki/Review/main/uplink.jsonId"
+      "jsonLdContext": "https://raw.githubusercontent.com/deaiyuki/Review/main/uplink.jsonld"
     },
     "version": "1.0"
   },
