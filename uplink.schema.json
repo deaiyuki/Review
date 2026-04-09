@@ -1,47 +1,59 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "UPLinkCredential",
-  "type": "object",
-  "$metadata": {
-    "uris": {
-      "jsonLdContext": "https://raw.githubusercontent.com/deaiyuki/Review/main/uplink.jsonld",
-      "jsonSchema": "https://raw.githubusercontent.com/deaiyuki/Review/main/uplink.schema.json"
-    }
-  },
-  "required": [
-    "id",
-    "linkedUpDid",
-    "relationship",
-    "linkageMethod",
-    "linkedAt",
-    "upSignatureVerified",
-    "privadoAuthenticationVerified"
-  ],
-  "properties": {
-    "id": {
-      "type": "string",
-      "pattern": "^did:"
+  "credentialSubject": {
+    "description": "Stores the data of the credential",
+    "title": "Credential subject",
+    "properties": {
+      "id": {
+        "description": "Stores the DID of the subject that owns the credential",
+        "title": "Credential subject ID",
+        "format": "uri",
+        "type": "string"
+      },
+      "linkedUpDid": {
+        "description": "UP DID",
+        "title": "UP DID",
+        "type": "string"
+      },
+      "relationship": {
+        "description": "relation for UP to PrivadoID",
+        "title": "relation",
+        "type": "string"
+      },
+      "linkageMethod": {
+        "description": "way to link for this VC",
+        "title": "how to link",
+        "type": "string"
+      },
+      "linkedAt": {
+        "description": "time to linked",
+        "title": "issue time",
+        "type": "string"
+      },
+      "upSignatureVerified": {
+        "description": "upSignature is successed or false",
+        "title": "upSignature",
+        "type": "boolean"
+      },
+      "privadoAuthenticationVerified": {
+        "description": "Privado authentication is successed or false",
+        "title": "PrvadoID authentication",
+        "type": "boolean"
+      },
+      "linkedUpAddress": {
+        "description": "linked UP and PrivadoID",
+        "title": "linked",
+        "type": "string"
+      }
     },
-    "linkedUpDid": {
-      "type": "string",
-      "pattern": "^did:"
-    },
-    "relationship": {
-      "type": "string"
-    },
-    "linkageMethod": {
-      "type": "string"
-    },
-    "linkedAt": {
-      "type": "string",
-      "format": "date-time"
-    },
-    "upSignatureVerified": {
-      "type": "boolean"
-    },
-    "privadoAuthenticationVerified": {
-      "type": "boolean"
-    }
-  },
-  "additionalProperties": true
+    "required": [
+      "linkedUpDid",
+      "relationship",
+      "linkageMethod",
+      "linkedAt",
+      "upSignatureVerified",
+      "privadoAuthenticationVerified",
+      "linkedUpAddress"
+    ],
+    "type": "object"
+  }
 }
