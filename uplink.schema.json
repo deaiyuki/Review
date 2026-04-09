@@ -1,60 +1,162 @@
 {
-  "credentialSubject": {
-    "description": "Stores the data of the credential",
-    "title": "Credential subject",
-    "properties": {
-      "id": {
-        "description": "Stores the DID of the subject that owns the credential",
-        "title": "Credential subject ID",
-        "format": "uri",
-        "type": "string"
+  "$metadata": {
+    "type": "object",
+    "uris": {
+      "jsonLdContext": "ipfs://QmSuYJdcr5oXyUhLBBqGK4bvQ5jhim1vEky5DCRQwXobTz"
+    },
+    "version": "1.0"
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "conecting UP to PrivadoID(phone)\n",
+  "title": "Conect_UP2Privado",
+  "properties": {
+    "@context": {
+      "type": [
+        "string",
+        "array",
+        "object"
+      ]
+    },
+    "expirationDate": {
+      "format": "date-time",
+      "type": "string"
+    },
+    "id": {
+      "type": "string"
+    },
+    "issuanceDate": {
+      "format": "date-time",
+      "type": "string"
+    },
+    "issuer": {
+      "type": [
+        "string",
+        "object"
+      ],
+      "format": "uri",
+      "properties": {
+        "id": {
+          "format": "uri",
+          "type": "string"
+        }
       },
-      "linkedUpDid": {
-        "description": "UP DID",
-        "title": "UP DID",
-        "type": "string"
-      },
-      "relationship": {
-        "description": "relation for UP to PrivadoID",
-        "title": "relation",
-        "type": "string"
-      },
-      "linkageMethod": {
-        "description": "way to link for this VC",
-        "title": "how to link",
-        "type": "string"
-      },
-      "linkedAt": {
-        "description": "time to linked",
-        "title": "issue time",
-        "type": "string"
-      },
-      "upSignatureVerified": {
-        "description": "upSignature is successed or false",
-        "title": "upSignature",
-        "type": "boolean"
-      },
-      "privadoAuthenticationVerified": {
-        "description": "Privado authentication is successed or false",
-        "title": "PrvadoID authentication",
-        "type": "boolean"
-      },
-      "linkedUpAddress": {
-        "description": "linked UP and PrivadoID",
-        "title": "linked",
+      "required": [
+        "id"
+      ]
+    },
+    "type": {
+      "type": [
+        "string",
+        "array"
+      ],
+      "items": {
         "type": "string"
       }
     },
-    "required": [
-      "id",
-      "linkedUpDid",
-      "relationship",
-      "linkageMethod",
-      "linkedAt",
-      "upSignatureVerified",
-      "privadoAuthenticationVerified",
-      "linkedUpAddress"
-    ],
-    "type": "object"
-  }
+    "credentialSubject": {
+      "description": "Stores the data of the credential",
+      "title": "Credential subject",
+      "properties": {
+        "id": {
+          "description": "Stores the DID of the subject that owns the credential",
+          "title": "Credential subject ID",
+          "format": "uri",
+          "type": "string"
+        },
+        "linkedUpDid": {
+          "description": "UP DID",
+          "title": "UP DID",
+          "type": "string"
+        },
+        "relationship": {
+          "description": "relation for UP to PrivadoID",
+          "title": "relation",
+          "type": "string"
+        },
+        "linkageMethod": {
+          "description": "way to link for this VC",
+          "title": "how to link",
+          "type": "string"
+        },
+        "linkedAt": {
+          "description": "time to linked",
+          "title": "issue time",
+          "type": "string"
+        },
+        "upSignatureVerified": {
+          "description": "upSignature is successed or false",
+          "title": "upSignature",
+          "type": "boolean"
+        },
+        "privadoAuthenticationVerified": {
+          "description": "Privado authentication is successed or false",
+          "title": "PrvadoID authentication",
+          "type": "boolean"
+        },
+        "linkedUpAddress": {
+          "description": "linked UP and PrivadoID",
+          "title": "linked",
+          "type": "string"
+        }
+      },
+      "required": [
+        "linkedUpDid",
+        "relationship",
+        "linkageMethod",
+        "linkedAt",
+        "upSignatureVerified",
+        "privadoAuthenticationVerified",
+        "linkedUpAddress"
+      ],
+      "type": "object"
+    },
+    "credentialSchema": {
+      "properties": {
+        "id": {
+          "format": "uri",
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "type"
+      ],
+      "type": "object"
+    },
+    "credentialStatus": {
+      "description": "Allows the discovery of information about the current status of the credential, such as whether it is suspended or revoked.",
+      "title": "Credential Status",
+      "properties": {
+        "id": {
+          "description": "Id URL of the credentialStatus.",
+          "title": "Id",
+          "format": "uri",
+          "type": "string"
+        },
+        "type": {
+          "description": "Expresses the credential status type (method). The value should provide enough information to determine the current status of the credential.",
+          "title": "Type",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "type"
+      ],
+      "type": "object"
+    }
+  },
+  "required": [
+    "@context",
+    "id",
+    "issuanceDate",
+    "issuer",
+    "type",
+    "credentialSubject",
+    "credentialSchema"
+  ],
+  "type": "object"
 }
