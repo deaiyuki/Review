@@ -1,42 +1,46 @@
 {
   "@context": [
     {
-      "@version": 1.1,
       "@protected": true,
+      "@version": 1.1,
       "id": "@id",
       "type": "@type",
-      "UPLinkCredential": {
-        "@id": "https://raw.githubusercontent.com/deaiyuki/Review/main/uplink.jsonld#UPLinkCredential",
+      "object": {
         "@context": {
-          "@version": 1.1,
+          "@propagate": true,
           "@protected": true,
-          "id": "@id",
-          "type": "@type",
-          "vocab": "https://raw.githubusercontent.com/deaiyuki/Review/main/uplink.jsonld#",
+          "iden3-vocab": "urn:uuid:3b364149-7e9c-49da-8b31-82e3d63c1435#",
           "xsd": "http://www.w3.org/2001/XMLSchema#",
           "linkedUpDid": {
-            "@id": "vocab:linkedUpDid",
-            "@type": "@id"
+            "@id": "iden3-vocab:linkedUpDid",
+            "@type": "xsd:string"
           },
           "relationship": {
-            "@id": "vocab:relationship"
+            "@id": "iden3-vocab:relationship",
+            "@type": "xsd:string"
           },
           "linkageMethod": {
-            "@id": "vocab:linkageMethod"
+            "@id": "iden3-vocab:linkageMethod",
+            "@type": "xsd:string"
           },
           "linkedAt": {
-            "@id": "vocab:linkedAt",
-            "@type": "xsd:dateTime"
+            "@id": "iden3-vocab:linkedAt",
+            "@type": "xsd:string"
           },
           "upSignatureVerified": {
-            "@id": "vocab:upSignatureVerified",
+            "@id": "iden3-vocab:upSignatureVerified",
             "@type": "xsd:boolean"
           },
           "privadoAuthenticationVerified": {
-            "@id": "vocab:privadoAuthenticationVerified",
+            "@id": "iden3-vocab:privadoAuthenticationVerified",
             "@type": "xsd:boolean"
+          },
+          "linkedUpAddress": {
+            "@id": "iden3-vocab:linkedUpAddress",
+            "@type": "xsd:string"
           }
-        }
+        },
+        "@id": "urn:uuid:5f4be200-e81e-49eb-972f-3e138905001d"
       }
     }
   ]
