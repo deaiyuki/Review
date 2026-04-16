@@ -1,0 +1,31 @@
+{
+    "@context": [
+        {
+            "@protected": true,
+            "@version": 1.1,
+            "id": "@id",
+            "type": "@type",
+            "teststudent": {
+                "@context": {
+                    "@propagate": true,
+                    "@protected": true,
+                    "iden3-vocab": "urn:uuid:8f1f1910-5934-471e-934c-db46e325e440#",
+                    "xsd": "http://www.w3.org/2001/XMLSchema#",
+                    "university": {
+                        "@id": "iden3-vocab:university",
+                        "@type": "xsd:string"
+                    },
+                    "faculty": {
+                        "@id": "iden3-vocab:faculty",
+                        "@type": "xsd:string"
+                    },
+                    "lab": {
+                        "@id": "iden3-vocab:lab",
+                        "@type": "xsd:string"
+                    }
+                },
+                "@id": "urn:uuid:b96185b6-80f3-4d77-94d3-7a26033b8cfc"
+            }
+        }
+    ]
+}
