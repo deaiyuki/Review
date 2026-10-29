@@ -1,0 +1,63 @@
+{
+    "@context": [
+        {
+            "@protected": true,
+            "@version": 1.1,
+            "id": "@id",
+            "type": "@type",
+            "University": {
+                "@context": {
+                    "@propagate": true,
+                    "@protected": true,
+                    "iden3-vocab": "urn:uuid:11b5cd87-3944-4b52-bbd0-294090495673#",
+                    "xsd": "http://www.w3.org/2001/XMLSchema#",
+                    "universityName": {
+                        "@id": "iden3-vocab:universityName",
+                        "@type": "xsd:string"
+                    },
+                    "facultyCode": {
+                        "@id": "iden3-vocab:facultyCode",
+                        "@type": "xsd:integer"
+                    },
+                    "departmentCode": {
+                        "@id": "iden3-vocab:departmentCode",
+                        "@type": "xsd:integer"
+                    },
+                    "labName": {
+                        "@id": "iden3-vocab:labName",
+                        "@type": "xsd:string"
+                    },
+                    "roleName": {
+                        "@id": "iden3-vocab:roleName",
+                        "@type": "xsd:string"
+                    },
+                    "subRole": {
+                        "@id": "iden3-vocab:subRole",
+                        "@type": "xsd:integer"
+                    },
+                    "schoolHash": {
+                        "@id": "iden3-vocab:schoolHash",
+                        "@type": "xsd:integer"
+                    },
+                    "facultyHash": {
+                        "@id": "iden3-vocab:facultyHash",
+                        "@type": "xsd:integer"
+                    },
+                    "departmentHash": {
+                        "@id": "iden3-vocab:departmentHash",
+                        "@type": "xsd:integer"
+                    },
+                    "labHash": {
+                        "@id": "iden3-vocab:labHash",
+                        "@type": "xsd:integer"
+                    },
+                    "credentialRef": {
+                        "@id": "iden3-vocab:credentialRef",
+                        "@type": "xsd:integer"
+                    }
+                },
+                "@id": "urn:uuid:e5e7e945-1ef1-4b55-9bc4-12fa171133dc"
+            }
+        }
+    ]
+}

@@ -1,0 +1,186 @@
+{
+    "$metadata": {
+        "uris": {
+            "jsonLdContext": "https://example.com/path/to/file/context.jsonld"
+        },
+        "version": "1.0",
+        "type": "University"
+    },
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "description": "大学共通のVC",
+    "title": "University_VC",
+    "properties": {
+        "credentialSubject": {
+            "description": "Stores the data of the credential",
+            "title": "Credential subject",
+            "properties": {
+                "id": {
+                    "description": "Stores the DID of the subject that owns the credential",
+                    "title": "Credential subject ID",
+                    "format": "uri",
+                    "type": "string"
+                },
+                "universityName": {
+                    "description": "大学名",
+                    "title": "Universityname",
+                    "type": "string"
+                },
+                "facultyCode": {
+                    "description": "学部名　学科系統分類表（大学・学部）の大分類コード。1:人文科学、2:社会科学、3:理学、4:工学、5:農学、6:保健、7:商船、8:家政、9:教育、10:芸術、11:その他。該当なしは0",
+                    "title": "Faculty code",
+                    "type": "integer"
+                },
+                "departmentCode": {
+                    "description": "学科・コース　該当なしは0。1人文科学:101文学,102史学,103哲学,199その他／2社会科学:201法学・政治学,202商学・経済学,203社会学,299その他／3理学:301数学,302物理学,303化学,304生物,305地学,399その他／4工学:401機械工学,402電気通信工学,403土木建築工学,404応用化学,405応用理学,406原子力工学,407鉱山学,408金属工学,409繊維工学,410船舶工学,411航空工学,412経営工学,413工芸学,499その他／5農学:501農学,502農芸化学,503農業工学,504農業経済学,505林学,506林産学,507獣医学畜産学,508水産学,599その他／6保健:601医学,602歯学,603薬学,604看護学,699その他／7商船:701商船学／8家政:801家政学,802食物学,803被服学,804住居学,805児童学,899その他／9教育:901教育学,902小学校課程,903中学校課程,904高等学校課程,905特別教科課程,906盲学校課程,907聾学校課程,908中等教育学校課程,909養護学校課程,910幼稚園課程,911体育学,912障害児教育課程,913特別支援教育課程,999その他／10芸術:1001美術,1002デザイン,1003音楽,1099その他／11その他:1101教養学,1102総合科学,1103教養課程(文科),1104教養課程(理科),1105教養課程(その他),1106人文・社会科学,1107国際関係学,1108人間関係科学,1199その他",
+                    "title": "Department code",
+                    "type": "integer"
+                },
+                "labName": {
+                    "description": "研究室名",
+                    "title": "Lab name",
+                    "type": "string"
+                },
+                "roleName": {
+                    "description": "役職名",
+                    "title": "Role name",
+                    "type": "string"
+                },
+                "subRole": {
+                    "description": "2桁の役割コード。十の位が系統（1:学生系、2:教員系、3:職員系）。11:学部生、12:修士課程、13:博士課程、14:研究生、15-18:予備、19:その他の学生、21:教授、22:准教授、23:講師、24:助教、25-28:予備、29:その他の教員、31:事務職員、32:技術職員、33:用務員、34-38:予備、39:その他の職員",
+                    "title": "Sub role",
+                    "type": "integer"
+                },
+                "schoolHash": {
+                    "description": "H(大学名＋master_nonce）",
+                    "title": "School hash",
+                    "type": "integer"
+                },
+                "facultyHash": {
+                    "description": "H(学部の値＋master_nonce)",
+                    "title": "Faculty hash",
+                    "type": "integer"
+                },
+                "departmentHash": {
+                    "description": "H(学科の値＋master_nonce)",
+                    "title": "Department hash",
+                    "type": "integer"
+                },
+                "labHash": {
+                    "description": "H(研究室＋master_nonce)",
+                    "title": "Lab hash",
+                    "type": "integer"
+                },
+                "credentialRef": {
+                    "description": "VCごとのランダムな参照ID",
+                    "title": "Credential reference",
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "universityName",
+                "facultyCode",
+                "departmentCode",
+                "labName",
+                "roleName",
+                "subRole",
+                "schoolHash",
+                "facultyHash",
+                "departmentHash",
+                "labHash",
+                "credentialRef"
+            ],
+            "type": "object"
+        },
+        "@context": {
+            "type": [
+                "string",
+                "array",
+                "object"
+            ]
+        },
+        "expirationDate": {
+            "format": "date-time",
+            "type": "string"
+        },
+        "id": {
+            "type": "string"
+        },
+        "issuanceDate": {
+            "format": "date-time",
+            "type": "string"
+        },
+        "issuer": {
+            "type": [
+                "string",
+                "object"
+            ],
+            "format": "uri",
+            "properties": {
+                "id": {
+                    "format": "uri",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "id"
+            ]
+        },
+        "type": {
+            "type": [
+                "string",
+                "array"
+            ],
+            "items": {
+                "type": "string"
+            }
+        },
+        "credentialSchema": {
+            "properties": {
+                "id": {
+                    "format": "uri",
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "id",
+                "type"
+            ],
+            "type": "object"
+        },
+        "credentialStatus": {
+            "description": "Allows the discovery of information about the current status of the credential, such as whether it is suspended or revoked.",
+            "title": "Credential Status",
+            "properties": {
+                "id": {
+                    "description": "Id URL of the credentialStatus.",
+                    "title": "Id",
+                    "format": "uri",
+                    "type": "string"
+                },
+                "type": {
+                    "description": "Expresses the credential status type (method). The value should provide enough information to determine the current status of the credential.",
+                    "title": "Type",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "id",
+                "type"
+            ],
+            "type": "object"
+        }
+    },
+    "required": [
+        "credentialSubject",
+        "@context",
+        "id",
+        "issuanceDate",
+        "issuer",
+        "type",
+        "credentialSchema"
+    ],
+    "type": "object"
+}
