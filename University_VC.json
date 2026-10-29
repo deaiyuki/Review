@@ -53,22 +53,22 @@
                 "schoolHash": {
                     "description": "H(大学名＋master_nonce）",
                     "title": "School hash",
-                    "type": "integer"
+                    "type": "string"
                 },
                 "facultyHash": {
                     "description": "H(学部の値＋master_nonce)",
                     "title": "Faculty hash",
-                    "type": "integer"
+                    "type": "string"
                 },
                 "departmentHash": {
                     "description": "H(学科の値＋master_nonce)",
                     "title": "Department hash",
-                    "type": "integer"
+                    "type": "string"
                 },
                 "labHash": {
                     "description": "H(研究室＋master_nonce)",
                     "title": "Lab hash",
-                    "type": "integer"
+                    "type": "string"
                 },
                 "credentialRef": {
                     "description": "VCごとのランダムな参照ID",
