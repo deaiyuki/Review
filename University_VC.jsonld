@@ -37,19 +37,19 @@
                     },
                     "schoolHash": {
                         "@id": "iden3-vocab:schoolHash",
-                        "@type": "xsd:integer"
+                        "@type": "xsd:string"
                     },
                     "facultyHash": {
                         "@id": "iden3-vocab:facultyHash",
-                        "@type": "xsd:integer"
+                        "@type": "xsd:string"
                     },
                     "departmentHash": {
                         "@id": "iden3-vocab:departmentHash",
-                        "@type": "xsd:integer"
+                        "@type": "xsd:string"
                     },
                     "labHash": {
                         "@id": "iden3-vocab:labHash",
-                        "@type": "xsd:integer"
+                        "@type": "xsd:string"
                     },
                     "credentialRef": {
                         "@id": "iden3-vocab:credentialRef",
